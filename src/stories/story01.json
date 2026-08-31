@@ -1,0 +1,21 @@
+{
+  "id": "story01",
+  "title": "",
+  "source": "",
+  "pages": [
+    {
+      "id": 1,
+      "text": "",
+      "thai": "",
+      "image": "/stories/story01/page01.png",
+      "audio": "/stories/story01/page01.mp3"
+    }
+  ],
+  "review": [
+    {
+      "word": "",
+      "meaning": "",
+      "audio": "/stories/story01/review01.mp3"
+    }
+  ]
+}
