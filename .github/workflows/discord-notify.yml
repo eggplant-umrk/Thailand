@@ -2,8 +2,10 @@ name: GitHub → Discord 通知
 
 on:
   create:
-  pull_request:
+  pull_request_target:
     types: [opened, closed]
+
+permissions: {}
 
 jobs:
   notify-branch-create:
@@ -37,7 +39,7 @@ jobs:
           curl -sf -H "Content-Type: application/json" -X POST -d "$PAYLOAD" "$DISCORD_WEBHOOK_URL"
 
   notify-pr-opened:
-    if: github.event_name == 'pull_request' && github.event.action == 'opened'
+    if: github.event_name == 'pull_request_target' && github.event.action == 'opened'
     runs-on: ubuntu-latest
     steps:
       - name: Discordへプルリクエスト作成を通知
@@ -73,7 +75,7 @@ jobs:
           curl -sf -H "Content-Type: application/json" -X POST -d "$PAYLOAD" "$DISCORD_WEBHOOK_URL"
 
   notify-pr-merged:
-    if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true && github.event.pull_request.base.ref == 'main'
+    if: github.event_name == 'pull_request_target' && github.event.action == 'closed' && github.event.pull_request.merged == true && github.event.pull_request.base.ref == 'main'
     runs-on: ubuntu-latest
     steps:
       - name: Discordへマージを通知（@everyone）
