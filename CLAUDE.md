@@ -23,7 +23,7 @@
 ## ディレクトリ構成のルール
 
 - 物語データ: `src/stories/storyXX.json`
-- 物語データのスキーマ: `{ id, title, source, pages: [{ id, text, thai, thaiReading, image, audio }], review: [{ word, reading, meaning, audio }] }`
+- 物語データのスキーマ: `{ id, title, titleThai, source, pages: [{ id, text, thai, thaiReading, image, audio }], review: [{ word, reading, meaning, audio }] }`(`titleThai` / `thaiReading` / `review[].reading` は任意項目)
 - 画像・音声素材: `public/stories/storyXX/`
 - コンポーネント: `src/components/`
 
