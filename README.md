@@ -99,6 +99,7 @@ public/
 #### 任意項目まとめ
 
 - `thai` / `thaiReading` / `titleThai` / `image` / `audioJa` / `audioThai` / `annotations` / `annotations[].categories.*`（各カテゴリ） / `review[].reading` / `review[].annotationId` は任意項目です。無い場合はその部分の表示・機能が省略されます。
+- `thai` が無いページでは、そのページのタイ語表示トグル自体を表示しません（ONにしても表示するものが無いため）。
 - 1話あたり3〜5ページ程度を目安にしてください。
 - `review` はその物語の振り返り（フラッシュカード）に使う単語リストです。
 
