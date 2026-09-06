@@ -33,6 +33,8 @@ public/
 
 `src/stories/storyXX.json` として、以下の形式でファイルを作成します（`story01.json` はダミーデータなので、内容を実データに差し替えるか、新しい番号でコピーして使ってください）。
 
+> **注記:** `story01.json` の中身は現時点でまだ新スキーマ（`audioJa`/`audioThai`・`annotations`・`review[].id`など）に対応済みではありません。コピーして使う場合は、下記の最新スキーマに沿って書き直してください。
+
 ```json
 {
   "id": "story01",
@@ -96,13 +98,13 @@ public/
 
 #### 任意項目まとめ
 
-- `thai` / `thaiReading` / `titleThai` / `annotations` / `annotations[].categories.*`（各カテゴリ） / `review[].reading` / `review[].annotationId` は任意項目です。無い場合はその部分の表示・機能が省略されます。
+- `thai` / `thaiReading` / `titleThai` / `image` / `audioJa` / `audioThai` / `annotations` / `annotations[].categories.*`（各カテゴリ） / `review[].reading` / `review[].annotationId` は任意項目です。無い場合はその部分の表示・機能が省略されます。
 - 1話あたり3〜5ページ程度を目安にしてください。
 - `review` はその物語の振り返り（フラッシュカード）に使う単語リストです。
 
 ### 2. 画像・音声ファイルを配置する
 
-`public/stories/storyXX/` フォルダの下に、JSON内の `image` / `audio` に指定したパスと同じファイル名で配置してください。
+`public/stories/storyXX/` フォルダの下に、JSON内の `image` / `audioJa` / `audioThai` / `review[].image` / `review[].audio` に指定したパスと同じファイル名で配置してください。
 
 ```
 public/stories/story01/
