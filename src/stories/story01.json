@@ -1,21 +1,86 @@
 {
   "id": "story01",
-  "title": "",
-  "source": "",
+  "title": "（プレースホルダー）物語タイトル",
+  "titleThai": "(ตัวยึดตำแหน่ง) ชื่อเรื่อง",
+  "source": "（プレースホルダー：実在する出典に差し替え予定）",
   "pages": [
     {
       "id": 1,
-      "text": "",
-      "thai": "",
+      "text": "むかしむかし、村はずれに{{gongsai:ご先祖さま}}を祭るお堂がありました。",
+      "thai": "กาลครั้งหนึ่ง ที่ชายหมู่บ้านมี{{gongsai:ศาลบรรพบุรุษ}}อยู่หลังหนึ่ง",
+      "thaiReading": "カーンクランヌン、ティーチャーイムーバーン ミー サーンバンプラブロット ユーランヌン",
       "image": "/stories/story01/page01.png",
-      "audio": "/stories/story01/page01.mp3"
+      "audioJa": "/stories/story01/page01_ja.mp3",
+      "audioThai": "/stories/story01/page01_th.mp3"
+    },
+    {
+      "id": 2,
+      "text": "ある日、村に{{naga:ナーガ}}という大きなヘビの神さまが現れました。{{mystery:知らない言葉}}も出てきます。",
+      "image": "/stories/story01/page02.png",
+      "audioJa": "/stories/story01/page02_ja.mp3"
+    },
+    {
+      "id": 3,
+      "text": "村の人々は{{tamboon:タンブン}}を行い、みんなで幸せに暮らしました。おしまい。",
+      "thai": "ชาวบ้านทำ{{tamboon:ทำบุญ}}และอยู่ร่วมกันอย่างมีความสุข จบ",
+      "image": "/stories/story01/page03.png",
+      "audioJa": "/stories/story01/page03_ja.mp3",
+      "audioThai": "/stories/story01/page03_th.mp3"
+    }
+  ],
+  "annotations": [
+    {
+      "id": "gongsai",
+      "word": "ご先祖さま",
+      "categories": {
+        "lifestyle": "タイの家庭には祖先を祀るお堂があり、日々お供えをする習慣がある。",
+        "values": "祖先を敬う気持ちは、タイの人々にとって大切な価値観のひとつ。"
+      }
+    },
+    {
+      "id": "naga",
+      "word": "ナーガ",
+      "categories": {
+        "lifestyle": "ナーガはタイの寺院の装飾やお祭りでよく見られる、水を司る蛇の神さま。",
+        "language": "「ナーガ」はサンスクリット語に由来し、タイ語でも同じ発音で使われる。",
+        "values": "水の恵みへの感謝と畏れが、ナーガ信仰の背景にある。"
+      }
+    },
+    {
+      "id": "tamboon",
+      "word": "タンブン",
+      "categories": {
+        "lifestyle": "タンブンは僧侶へ食事を渡すなど、日常的に行われる徳を積む行為。",
+        "values": "徳を積むことは来世の幸せにつながると考えられている。"
+      }
     }
   ],
   "review": [
     {
-      "word": "",
-      "meaning": "",
+      "id": "review01",
+      "annotationId": "gongsai",
+      "image": "/stories/story01/review01.png",
+      "word": "บรรพบุรุษ",
+      "reading": "バンプラブロット",
+      "meaning": "ご先祖さま",
       "audio": "/stories/story01/review01.mp3"
+    },
+    {
+      "id": "review02",
+      "annotationId": "naga",
+      "image": "/stories/story01/review02.png",
+      "word": "นาค",
+      "reading": "ナーク",
+      "meaning": "ナーガ（蛇の神さま）",
+      "audio": "/stories/story01/review02.mp3"
+    },
+    {
+      "id": "review03",
+      "annotationId": "tamboon",
+      "image": "/stories/story01/review03.png",
+      "word": "ทำบุญ",
+      "meaning": "タンブン（徳を積むこと）",
+      "audio": "/stories/story01/review03.mp3"
     }
   ]
 }

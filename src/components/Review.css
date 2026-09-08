@@ -1,0 +1,77 @@
+.review {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.1rem;
+}
+
+.review__count {
+  color: #666;
+  margin: 0;
+}
+
+.review__card {
+  width: 100%;
+  max-width: 360px;
+  aspect-ratio: 4 / 3;
+  border: none;
+  border-radius: 12px;
+  background: #f0f0f0;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.review__card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.review__image-placeholder {
+  color: #999;
+}
+
+.review__back {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.review__word {
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.review__reading {
+  color: #777;
+  margin: 0;
+}
+
+.review__meaning {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.review__next {
+  font-size: 1.1rem;
+  padding: 0.6rem 1.4rem;
+  border-radius: 8px;
+  border: none;
+  background: #4a90d9;
+  color: #fff;
+  cursor: pointer;
+}
+
+.review__done {
+  text-align: center;
+  font-size: 1.3rem;
+}

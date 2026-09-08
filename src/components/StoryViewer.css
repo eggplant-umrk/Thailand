@@ -1,0 +1,168 @@
+.story-viewer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 1.1rem;
+}
+
+.story-viewer__image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: #f0f0f0;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.story-viewer__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.story-viewer__image-placeholder {
+  color: #999;
+  font-size: 1rem;
+}
+
+.story-viewer__toggles {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.story-viewer__toggle {
+  font-size: 1rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  border: 2px solid #4a90d9;
+  background: #eaf2fc;
+  cursor: pointer;
+}
+
+.story-viewer__toggle[aria-pressed='false'] {
+  opacity: 0.5;
+  border-color: #ccc;
+  background: #f5f5f5;
+}
+
+.story-viewer__text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.story-viewer__text-block p {
+  line-height: 1.8;
+  margin: 0 0 0.5rem;
+}
+
+.story-viewer__reading {
+  color: #777;
+  font-size: 0.9rem;
+}
+
+.story-viewer__word {
+  font-weight: bold;
+  border: none;
+  background: #fff3b0;
+  padding: 0 0.15rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font: inherit;
+}
+
+.story-viewer__word--plain {
+  background: none;
+  cursor: default;
+  padding: 0;
+}
+
+.story-viewer__audio {
+  display: flex;
+  align-items: center;
+}
+
+.story-viewer__audio-button {
+  font-size: 0.95rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 8px;
+  border: 1px solid #4a90d9;
+  background: #fff;
+  cursor: pointer;
+}
+
+.story-viewer__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.story-viewer__nav button {
+  font-size: 1.1rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  border: none;
+  background: #4a90d9;
+  color: #fff;
+  cursor: pointer;
+}
+
+.story-viewer__nav button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.story-viewer__page-count {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.story-viewer__overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 10;
+}
+
+.story-viewer__card {
+  position: relative;
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  max-width: 420px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.story-viewer__card h3 {
+  margin-top: 0;
+}
+
+.story-viewer__card section {
+  margin-bottom: 1rem;
+}
+
+.story-viewer__card h4 {
+  margin: 0 0 0.25rem;
+  color: #4a90d9;
+}
+
+.story-viewer__card-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  border: none;
+  background: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  line-height: 1;
+}
