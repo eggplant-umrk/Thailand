@@ -168,7 +168,10 @@ function StoryViewer({ story, onFinish }) {
           aria-pressed={showJa}
           onClick={() => setShowJa((value) => !value)}
         >
-          👁 日本語
+          <span className="story-viewer__toggle-icon" aria-hidden="true">
+            {showJa ? '👁️' : '👁️‍🗨️'}
+          </span>
+          <span className="story-viewer__toggle-label">日本語</span>
         </button>
         {hasThaiOnPage && (
           <button
@@ -177,7 +180,10 @@ function StoryViewer({ story, onFinish }) {
             aria-pressed={showThai}
             onClick={() => setShowThai((value) => !value)}
           >
-            👁 タイ語
+            <span className="story-viewer__toggle-icon" aria-hidden="true">
+              {showThai ? '👁️' : '👁️‍🗨️'}
+            </span>
+            <span className="story-viewer__toggle-label">タイ語</span>
           </button>
         )}
       </div>
