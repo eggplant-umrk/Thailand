@@ -102,3 +102,22 @@
   color: var(--color-accent-dark);
   padding: 2rem 0;
 }
+
+/* PC向けレイアウト：カードとフォントをPCの余白に合わせて拡大する */
+@media (min-width: 768px) {
+  .review {
+    gap: 1.75rem;
+  }
+
+  .review__card {
+    max-width: 480px;
+  }
+
+  .review__word {
+    font-size: 2.1rem;
+  }
+
+  .review__meaning {
+    font-size: 1.4rem;
+  }
+}

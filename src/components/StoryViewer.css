@@ -284,3 +284,40 @@
 .story-viewer__card-close:hover {
   color: var(--color-text);
 }
+
+/*
+ * PC向けレイアウト：挿絵と本文を見開きページのように左右に並べる。
+ * 将来スマホ対応する際は、この下に別のブレークポイント（例: max-width: 767px）で
+ * 個別のスマホ用調整を追記していく想定。現状の（このメディアクエリより上の）スタイルが
+ * そのままスマホ用のフォールバックとして機能する。
+ */
+@media (min-width: 768px) {
+  .story-viewer {
+    display: grid;
+    grid-template-columns: minmax(260px, 1fr) minmax(340px, 1.3fr);
+    grid-template-areas:
+      'image toggles'
+      'image text'
+      'nav nav';
+    column-gap: 2.5rem;
+    row-gap: 1.25rem;
+    align-items: start;
+  }
+
+  .story-viewer__image {
+    grid-area: image;
+  }
+
+  .story-viewer__toggles {
+    grid-area: toggles;
+    justify-content: flex-start;
+  }
+
+  .story-viewer__text {
+    grid-area: text;
+  }
+
+  .story-viewer__nav {
+    grid-area: nav;
+  }
+}
