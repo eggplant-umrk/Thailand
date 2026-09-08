@@ -111,6 +111,7 @@ function StoryViewer({ story, onFinish }) {
 
   useEffect(() => {
     setImageError(false)
+    window.scrollTo(0, 0)
   }, [pageIndex])
 
   const jaAudio = useAudioPlayer(currentPage?.audioJa)
