@@ -48,8 +48,8 @@ function Review({ story }) {
     return (
       <div className="review">
         <div className="review__done">
-          <p>ぜんぶ おぼえたね！</p>
-          <p>おつかれさま！</p>
+          <p>全部 覚えたね！</p>
+          <p>お疲れさま！</p>
         </div>
       </div>
     )

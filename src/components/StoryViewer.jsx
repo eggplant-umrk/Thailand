@@ -69,6 +69,7 @@ function useAudioPlayer(src) {
       return
     }
 
+    setHasError(false)
     audio.currentTime = 0
     const playResult = audio.play()
     if (playResult && typeof playResult.then === 'function') {
@@ -186,11 +187,13 @@ function StoryViewer({ story, onFinish }) {
             <p>{renderAnnotatedText(currentPage.text, annotationsById, handleWordTap)}</p>
             {currentPage.audioJa && (
               <div className="story-viewer__audio">
-                {!jaAudio.hasError && (
-                  <button type="button" className="story-viewer__audio-button" onClick={jaAudio.toggle}>
-                    {jaAudio.isPlaying ? '⏹ 停止' : '▶ 再生'}
-                  </button>
-                )}
+                <button
+                  type="button"
+                  className={`story-viewer__audio-button${jaAudio.hasError ? ' story-viewer__audio-button--error' : ''}`}
+                  onClick={jaAudio.toggle}
+                >
+                  {jaAudio.isPlaying ? '⏹ 停止' : '▶ 再生'}
+                </button>
                 <audio
                   ref={jaAudio.audioRef}
                   src={currentPage.audioJa}
@@ -209,11 +212,13 @@ function StoryViewer({ story, onFinish }) {
             {currentPage.thaiReading && <p className="story-viewer__reading">{currentPage.thaiReading}</p>}
             {currentPage.audioThai && (
               <div className="story-viewer__audio">
-                {!thaiAudio.hasError && (
-                  <button type="button" className="story-viewer__audio-button" onClick={thaiAudio.toggle}>
-                    {thaiAudio.isPlaying ? '⏹ 停止' : '▶ 再生'}
-                  </button>
-                )}
+                <button
+                  type="button"
+                  className={`story-viewer__audio-button${thaiAudio.hasError ? ' story-viewer__audio-button--error' : ''}`}
+                  onClick={thaiAudio.toggle}
+                >
+                  {thaiAudio.isPlaying ? '⏹ 停止' : '▶ 再生'}
+                </button>
                 <audio
                   ref={thaiAudio.audioRef}
                   src={currentPage.audioThai}
@@ -229,13 +234,13 @@ function StoryViewer({ story, onFinish }) {
 
       <div className="story-viewer__nav">
         <button type="button" onClick={handlePrev} disabled={pageIndex === 0}>
-          ← まえへ
+          ← 前へ
         </button>
         <span className="story-viewer__page-count">
           {pageIndex + 1} / {pages.length}
         </span>
         <button type="button" onClick={handleNext}>
-          {isLastPage ? 'よみおわる' : 'つぎへ →'}
+          {isLastPage ? '読み終わる' : '次へ →'}
         </button>
       </div>
 

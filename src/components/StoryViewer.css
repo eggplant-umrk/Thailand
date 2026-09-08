@@ -94,6 +94,12 @@
   cursor: pointer;
 }
 
+.story-viewer__audio-button--error {
+  color: #999;
+  border-color: #ccc;
+  background: #f5f5f5;
+}
+
 .story-viewer__nav {
   display: flex;
   align-items: center;

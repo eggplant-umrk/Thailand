@@ -6,7 +6,7 @@
   "pages": [
     {
       "id": 1,
-      "text": "むかしむかし、村はずれに{{gongsai:ご先祖さま}}を祭るお堂がありました。",
+      "text": "昔々、村はずれに{{gongsai:ご先祖様}}を祭るお堂がありました。",
       "thai": "กาลครั้งหนึ่ง ที่ชายหมู่บ้านมี{{gongsai:ศาลบรรพบุรุษ}}อยู่หลังหนึ่ง",
       "thaiReading": "カーンクランヌン、ティーチャーイムーバーン ミー サーンバンプラブロット ユーランヌン",
       "image": "/stories/story01/page01.png",
@@ -15,7 +15,7 @@
     },
     {
       "id": 2,
-      "text": "ある日、村に{{naga:ナーガ}}という大きなヘビの神さまが現れました。{{mystery:知らない言葉}}も出てきます。",
+      "text": "ある日、村に{{naga:ナーガ}}という大きなヘビの神様が現れました。{{mystery:知らない言葉}}も出てきます。",
       "image": "/stories/story01/page02.png",
       "audioJa": "/stories/story01/page02_ja.mp3"
     },
@@ -31,17 +31,17 @@
   "annotations": [
     {
       "id": "gongsai",
-      "word": "ご先祖さま",
+      "word": "ご先祖様",
       "categories": {
         "lifestyle": "タイの家庭には祖先を祀るお堂があり、日々お供えをする習慣がある。",
-        "values": "祖先を敬う気持ちは、タイの人々にとって大切な価値観のひとつ。"
+        "values": "祖先を敬う気持ちは、タイの人々にとって大切な価値観の一つ。"
       }
     },
     {
       "id": "naga",
       "word": "ナーガ",
       "categories": {
-        "lifestyle": "ナーガはタイの寺院の装飾やお祭りでよく見られる、水を司る蛇の神さま。",
+        "lifestyle": "ナーガはタイの寺院の装飾やお祭りでよく見られる、水を司る蛇の神様。",
         "language": "「ナーガ」はサンスクリット語に由来し、タイ語でも同じ発音で使われる。",
         "values": "水の恵みへの感謝と畏れが、ナーガ信仰の背景にある。"
       }
@@ -62,7 +62,7 @@
       "image": "/stories/story01/review01.png",
       "word": "บรรพบุรุษ",
       "reading": "バンプラブロット",
-      "meaning": "ご先祖さま",
+      "meaning": "ご先祖様",
       "audio": "/stories/story01/review01.mp3"
     },
     {
@@ -71,7 +71,7 @@
       "image": "/stories/story01/review02.png",
       "word": "นาค",
       "reading": "ナーク",
-      "meaning": "ナーガ（蛇の神さま）",
+      "meaning": "ナーガ（蛇の神様）",
       "audio": "/stories/story01/review02.mp3"
     },
     {
