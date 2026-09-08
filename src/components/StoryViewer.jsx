@@ -183,7 +183,7 @@ function StoryViewer({ story, onFinish }) {
 
       <div className="story-viewer__text">
         {showJa && (
-          <div className="story-viewer__text-block">
+          <div className="story-viewer__text-block story-viewer__text-block--ja">
             <p>{renderAnnotatedText(currentPage.text, annotationsById, handleWordTap)}</p>
             {currentPage.audioJa && (
               <div className="story-viewer__audio">
@@ -207,7 +207,7 @@ function StoryViewer({ story, onFinish }) {
         )}
 
         {showThai && hasThaiOnPage && (
-          <div className="story-viewer__text-block">
+          <div className="story-viewer__text-block story-viewer__text-block--thai">
             <p>{renderAnnotatedText(currentPage.thai, annotationsById, handleWordTap)}</p>
             {currentPage.thaiReading && <p className="story-viewer__reading">{currentPage.thaiReading}</p>}
             {currentPage.audioThai && (

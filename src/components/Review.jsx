@@ -60,7 +60,11 @@ function Review({ story }) {
       <p className="review__count">
         {cardIndex + 1} / {cards.length}
       </p>
-      <button type="button" className="review__card" onClick={handleFlip}>
+      <button
+        type="button"
+        className={`review__card${flipped ? ' review__card--flipped' : ''}`}
+        onClick={handleFlip}
+      >
         {!flipped ? (
           currentCard.image && !imageError ? (
             <img src={currentCard.image} alt="" onError={() => setImageError(true)} />
