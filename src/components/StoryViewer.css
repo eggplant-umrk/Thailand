@@ -1,0 +1,341 @@
+.story-viewer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  font-size: 1.15rem;
+  color: var(--color-text);
+}
+
+.story-viewer__image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: var(--color-surface-alt);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-card);
+}
+
+.story-viewer__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.story-viewer__image-placeholder {
+  color: var(--color-muted);
+  font-size: 1.05rem;
+}
+
+.story-viewer__toggles {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.story-viewer__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 1rem;
+  padding: 0.5rem 1.2rem;
+  border-radius: 999px;
+  border: 2px solid var(--color-secondary);
+  background: var(--color-secondary);
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease, transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.story-viewer__toggle-icon {
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.story-viewer__toggle-label {
+  line-height: 1;
+}
+
+.story-viewer__toggle:hover {
+  background: var(--color-secondary-dark);
+  border-color: var(--color-secondary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(74, 56, 38, 0.15);
+}
+
+.story-viewer__toggle[aria-pressed='false'] {
+  background: transparent;
+  border-color: var(--color-border);
+  color: var(--color-muted);
+}
+
+.story-viewer__toggle[aria-pressed='false']:hover {
+  background: var(--color-surface-alt);
+  border-color: var(--color-muted);
+  color: var(--color-text);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 8px rgba(74, 56, 38, 0.1);
+}
+
+.story-viewer__toggle:active {
+  transform: scale(0.94);
+  box-shadow: none;
+}
+
+.story-viewer__text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.story-viewer__text-block {
+  padding: 1rem 1.25rem;
+  border-radius: 14px;
+  background: var(--color-surface-alt);
+}
+
+.story-viewer__text-block--ja {
+  border-left: 4px solid var(--color-accent);
+}
+
+.story-viewer__text-block--thai {
+  border-left: 4px solid var(--color-text-thai);
+}
+
+.story-viewer__text-block--thai p,
+.story-viewer__text-block--thai .story-viewer__reading {
+  color: var(--color-text-thai);
+}
+
+.story-viewer__text-block p {
+  line-height: 1.9;
+  margin: 0 0 0.75rem;
+}
+
+.story-viewer__text-block p:last-child {
+  margin-bottom: 0;
+}
+
+.story-viewer__reading {
+  color: var(--color-muted);
+  font-size: 0.92rem;
+}
+
+.story-viewer__word {
+  font-weight: bold;
+  border: none;
+  background: var(--color-highlight);
+  padding: 0.05rem 0.35rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+  transition: background-color 0.15s ease;
+}
+
+.story-viewer__word:hover {
+  background: #f7cf6c;
+}
+
+.story-viewer__word--plain {
+  background: none;
+  cursor: default;
+  padding: 0;
+}
+
+.story-viewer__word--plain:hover {
+  background: none;
+}
+
+.story-viewer__audio {
+  display: flex;
+  align-items: center;
+  margin-top: 0.75rem;
+}
+
+.story-viewer__audio-button {
+  font-size: 0.95rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  border: none;
+  background: var(--color-accent);
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.15s ease;
+}
+
+.story-viewer__audio-button:hover {
+  background: var(--color-accent-dark);
+  transform: translateY(-1px);
+}
+
+.story-viewer__audio-button--error {
+  background: var(--color-surface-alt);
+  color: var(--color-muted);
+  border: 1px solid var(--color-border);
+}
+
+.story-viewer__audio-button--error:hover {
+  background: var(--color-surface-alt);
+  transform: none;
+}
+
+.story-viewer__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 1rem;
+  border-top: 2px solid var(--color-border);
+}
+
+.story-viewer__nav button {
+  font-size: 1.1rem;
+  padding: 0.7rem 1.4rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.story-viewer__nav button:first-of-type {
+  background: var(--color-surface-alt);
+  color: var(--color-text);
+  border: 2px solid var(--color-border);
+}
+
+.story-viewer__nav button:first-of-type:hover:not(:disabled) {
+  background: var(--color-border);
+}
+
+.story-viewer__nav button:last-of-type {
+  background: var(--color-accent);
+  color: #fff;
+  box-shadow: 0 4px 10px rgba(224, 138, 60, 0.35);
+}
+
+.story-viewer__nav button:last-of-type:hover {
+  background: var(--color-accent-dark);
+  transform: translateY(-1px);
+}
+
+.story-viewer__nav button:disabled {
+  background: var(--color-surface-alt);
+  color: var(--color-muted);
+  border-color: var(--color-border);
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+.story-viewer__page-count {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+.story-viewer__overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(74, 56, 38, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  z-index: 10;
+}
+
+.story-viewer__card {
+  position: relative;
+  background: var(--color-surface);
+  border-radius: 18px;
+  padding: 1.75rem;
+  max-width: 420px;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--color-border);
+}
+
+.story-viewer__card h3 {
+  margin-top: 0;
+  color: var(--color-accent-dark);
+  font-size: 1.4rem;
+}
+
+.story-viewer__card section {
+  margin-bottom: 1.25rem;
+}
+
+.story-viewer__card section:last-child {
+  margin-bottom: 0;
+}
+
+.story-viewer__card h4 {
+  margin: 0 0 0.35rem;
+  color: var(--color-secondary-dark);
+  font-size: 1rem;
+}
+
+.story-viewer__card p {
+  margin: 0;
+  line-height: 1.7;
+}
+
+.story-viewer__card-close {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.75rem;
+  border: none;
+  background: none;
+  font-size: 1.6rem;
+  color: var(--color-muted);
+  cursor: pointer;
+  line-height: 1;
+}
+
+.story-viewer__card-close:hover {
+  color: var(--color-text);
+}
+
+/*
+ * PC向けレイアウト：挿絵と本文を見開きページのように左右に並べる。
+ * 将来スマホ対応する際は、この下に別のブレークポイント（例: max-width: 767px）で
+ * 個別のスマホ用調整を追記していく想定。現状の（このメディアクエリより上の）スタイルが
+ * そのままスマホ用のフォールバックとして機能する。
+ */
+@media (min-width: 768px) {
+  .story-viewer {
+    display: grid;
+    grid-template-columns: minmax(260px, 1fr) minmax(340px, 1.3fr);
+    grid-template-areas:
+      'image toggles'
+      'image text'
+      'nav nav';
+    column-gap: 2.5rem;
+    row-gap: 1.25rem;
+    align-items: start;
+  }
+
+  .story-viewer__image {
+    grid-area: image;
+  }
+
+  .story-viewer__toggles {
+    grid-area: toggles;
+    justify-content: flex-start;
+  }
+
+  .story-viewer__text {
+    grid-area: text;
+  }
+
+  .story-viewer__nav {
+    grid-area: nav;
+  }
+}

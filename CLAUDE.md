@@ -75,3 +75,10 @@
 
 - 指示された範囲を超えて実装を進めない(「ひな形だけ」と言われたら機能実装はしない、など)
 - 変更内容が指示の範囲を超えそうな場合は、先に確認を取ること
+
+## 既知の課題（未修正・今後対応）
+
+- StoryViewerで単語の詳細カードを開いたまま「次へ/前へ」でページ送りすると、`openAnnotationId`がリセットされず、新しいページの上に古いページの詳細カードが開いたままになる。フォーカストラップも未実装のため、キーボード操作でカード外のページ送りボタンに到達できてしまう(`StoryViewer.jsx`)
+- `useAudioPlayer`の`toggle()`は多重発火防止のガードが無く、再生ボタンを素早く連続クリックすると`audio.play()`が二重に呼ばれ、実際は再生できているのにエラー表示（グレーアウト）になることがある(`src/hooks/useAudioPlayer.js`)
+- `useAudioPlayer`の`handleEnded`/`handleError`（`<audio>`要素のネイティブonEnded/onErrorハンドラ）には、`toggle()`のplay()Promiseハンドラに追加したisStillCurrent相当のstale判定ガードが無い。`pause()`は仕様上ネットワーク取得を必ず中断するとは限らないため、要素がアンマウントされた後に遅延して`error`イベントが発火すると、無関係な現在の状態を上書きする可能性が理論上ある（未検証・低優先度）(`src/hooks/useAudioPlayer.js`)
+- `useAudioPlayer`のstale-promiseガード（`isStillCurrent`）は要素とsrcの2値一致という組み合わせ判定であり、単調増加のジェネレーショントークンではない。現状は`pause()`/src差し替えが古いPromiseをほぼ即座に解決させるため実害はないが、将来`<audio>`要素のプーリングや同一src値の連続除去など質的に異なる変更を加える場合は、この前提が崩れて同種のバグが再発しうる点に注意(`src/hooks/useAudioPlayer.js`)

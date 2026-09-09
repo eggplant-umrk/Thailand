@@ -1,0 +1,161 @@
+.review {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  font-size: 1.15rem;
+  color: var(--color-text);
+  padding-top: 1.5rem;
+  border-top: 2px solid var(--color-border);
+}
+
+.review__count {
+  color: var(--color-muted);
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.review__card {
+  width: 100%;
+  max-width: 360px;
+  aspect-ratio: 4 / 3;
+  border: 1px solid var(--color-border);
+  border-radius: 18px;
+  background: var(--color-surface-alt);
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.review__card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(74, 56, 38, 0.2);
+}
+
+.review__card--flipped {
+  background: var(--color-surface);
+  border-color: var(--color-accent);
+}
+
+.review__card:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+.review__card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.review__image-placeholder {
+  color: var(--color-muted);
+}
+
+.review__back {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.review__word {
+  font-size: 1.7rem;
+  font-weight: bold;
+  margin: 0;
+  color: var(--color-text-thai);
+}
+
+.review__reading {
+  color: var(--color-muted);
+  margin: 0;
+}
+
+.review__meaning {
+  margin: 0;
+  font-size: 1.25rem;
+  color: var(--color-text);
+}
+
+.review__audio {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.25rem;
+}
+
+.review__audio-button {
+  font-size: 0.95rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  border: none;
+  background: var(--color-accent);
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.15s ease;
+}
+
+.review__audio-button:hover {
+  background: var(--color-accent-dark);
+  transform: translateY(-1px);
+}
+
+.review__audio-button--error {
+  background: var(--color-surface-alt);
+  color: var(--color-muted);
+  border: 1px solid var(--color-border);
+}
+
+.review__audio-button--error:hover {
+  background: var(--color-surface-alt);
+  transform: none;
+}
+
+.review__next {
+  font-size: 1.1rem;
+  padding: 0.7rem 1.6rem;
+  border-radius: 999px;
+  border: none;
+  background: var(--color-accent);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(224, 138, 60, 0.35);
+  transition: background-color 0.15s ease, transform 0.15s ease;
+}
+
+.review__next:hover {
+  background: var(--color-accent-dark);
+  transform: translateY(-1px);
+}
+
+.review__done {
+  text-align: center;
+  font-size: 1.4rem;
+  color: var(--color-accent-dark);
+  padding: 2rem 0;
+}
+
+/* PC向けレイアウト：カードとフォントをPCの余白に合わせて拡大する */
+@media (min-width: 768px) {
+  .review {
+    gap: 1.75rem;
+  }
+
+  .review__card {
+    max-width: 480px;
+  }
+
+  .review__word {
+    font-size: 2.1rem;
+  }
+
+  .review__meaning {
+    font-size: 1.4rem;
+  }
+}
