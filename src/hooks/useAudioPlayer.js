@@ -33,7 +33,16 @@ function useAudioPlayer(src) {
     audio.currentTime = 0
     const playResult = audio.play()
     if (playResult && typeof playResult.then === 'function') {
-      playResult.then(() => setIsPlaying(true)).catch(() => setHasError(true))
+      // audioがアンマウント/リマウントされて別の要素に差し替わった後にPromiseが
+      // 解決すると、その別要素の状態を誤って上書きしてしまうため、まだ同じ要素が
+      // マウントされている場合のみ状態を更新する
+      playResult
+        .then(() => {
+          if (audioElRef.current === audio) setIsPlaying(true)
+        })
+        .catch(() => {
+          if (audioElRef.current === audio) setHasError(true)
+        })
     } else {
       setIsPlaying(true)
     }

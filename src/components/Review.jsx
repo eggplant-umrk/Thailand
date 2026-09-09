@@ -39,6 +39,9 @@ function Review({ story }) {
   }
 
   const handleCardKeyDown = (event) => {
+    // カード内の子要素（音声ボタンなど）からバブリングしてきたキー入力では
+    // フリップしない。カード自体にフォーカスがある場合のみ反応する
+    if (event.target !== event.currentTarget) return
     if (event.key === 'Enter' || event.key === ' ') {
       event.preventDefault()
       handleFlip()
@@ -97,7 +100,6 @@ function Review({ story }) {
                     event.stopPropagation()
                     cardAudio.toggle()
                   }}
-                  onKeyDown={(event) => event.stopPropagation()}
                 >
                   {cardAudio.isPlaying ? '⏹ 停止' : '▶ 再生'}
                 </button>
