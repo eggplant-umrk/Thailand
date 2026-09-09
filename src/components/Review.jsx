@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import useAudioPlayer from '../hooks/useAudioPlayer'
 import './Review.css'
 
 function Review({ story }) {
@@ -11,6 +12,7 @@ function Review({ story }) {
 
   const currentCard = cards[cardIndex]
   const isFinished = cardIndex >= cards.length
+  const cardAudio = useAudioPlayer(currentCard?.audio)
 
   const handleFlip = () => {
     if (!currentCard) return
@@ -34,6 +36,13 @@ function Review({ story }) {
     setFlipped(false)
     setImageError(false)
     setCardIndex((index) => index + 1)
+  }
+
+  const handleCardKeyDown = (event) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault()
+      handleFlip()
+    }
   }
 
   if (cards.length === 0) {
@@ -60,10 +69,13 @@ function Review({ story }) {
       <p className="review__count">
         {cardIndex + 1} / {cards.length}
       </p>
-      <button
-        type="button"
+      <div
+        role="button"
+        tabIndex={0}
+        aria-pressed={flipped}
         className={`review__card${flipped ? ' review__card--flipped' : ''}`}
         onClick={handleFlip}
+        onKeyDown={handleCardKeyDown}
       >
         {!flipped ? (
           currentCard.image && !imageError ? (
@@ -76,9 +88,30 @@ function Review({ story }) {
             <p className="review__word">{currentCard.word}</p>
             {currentCard.reading && <p className="review__reading">{currentCard.reading}</p>}
             <p className="review__meaning">{currentCard.meaning}</p>
+            {currentCard.audio && (
+              <div className="review__audio">
+                <button
+                  type="button"
+                  className={`review__audio-button${cardAudio.hasError ? ' review__audio-button--error' : ''}`}
+                  onClick={(event) => {
+                    event.stopPropagation()
+                    cardAudio.toggle()
+                  }}
+                >
+                  {cardAudio.isPlaying ? '⏹ 停止' : '▶ 再生'}
+                </button>
+                <audio
+                  ref={cardAudio.audioRef}
+                  src={currentCard.audio}
+                  preload="none"
+                  onEnded={cardAudio.handleEnded}
+                  onError={cardAudio.handleError}
+                />
+              </div>
+            )}
           </div>
         )}
-      </button>
+      </div>
       <button type="button" className="review__next" onClick={handleNextCard}>
         次のカードへ
       </button>
