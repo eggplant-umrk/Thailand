@@ -97,6 +97,7 @@ function Review({ story }) {
                     event.stopPropagation()
                     cardAudio.toggle()
                   }}
+                  onKeyDown={(event) => event.stopPropagation()}
                 >
                   {cardAudio.isPlaying ? '⏹ 停止' : '▶ 再生'}
                 </button>

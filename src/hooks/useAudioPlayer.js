@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 
 function useAudioPlayer(src) {
-  const audioRef = useRef(null)
+  const audioElRef = useRef(null)
   const [isPlaying, setIsPlaying] = useState(false)
   const [hasError, setHasError] = useState(false)
 
@@ -10,8 +10,16 @@ function useAudioPlayer(src) {
     setHasError(false)
   }, [src])
 
+  // <audio>要素はJA/TH表示トグルやカードのフリップで条件付きレンダリングされ
+  // アンマウント/リマウントされるため、コールバックrefでマウントのたびに状態をリセットする
+  const audioRef = useCallback((node) => {
+    audioElRef.current = node
+    setIsPlaying(false)
+    setHasError(false)
+  }, [])
+
   const toggle = useCallback(() => {
-    const audio = audioRef.current
+    const audio = audioElRef.current
     if (!audio) return
 
     if (isPlaying) {
